@@ -1,9 +1,8 @@
 ---
 # You can also start simply with 'default'
 theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
+# 使用本地背景图片
+background: /background.svg
 # some information about your slides (markdown enabled)
 title: Welcome to Slidev
 info: |
@@ -112,7 +111,7 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
 <img
   v-click
   class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
+  src="/arrow-bottom-left.svg"
   alt=""
 />
 <p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
@@ -138,7 +137,7 @@ The title will be inferred from your slide content, or you can override it with 
 
 ---
 layout: image-right
-image: https://cover.sli.dev
+image: /background.svg
 ---
 
 # Code
@@ -327,9 +326,9 @@ theme: seriph
 ---
 ```
 
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
+<img border="rounded" src="/logo-square.png" alt="Theme Default">
 
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
+<img border="rounded" src="/logo-circle.png" alt="Theme Seriph">
 
 </div>
 
@@ -398,7 +397,7 @@ Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), t
       :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
       :enter="final"
       class="absolute inset-0"
-      src="https://sli.dev/logo-square.png"
+      src="/logo-square.png"
       alt=""
     />
     <img
@@ -406,7 +405,7 @@ Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), t
       :initial="{ y: 500, x: -100, scale: 2 }"
       :enter="final"
       class="absolute inset-0"
-      src="https://sli.dev/logo-circle.png"
+      src="/logo-circle.png"
       alt=""
     />
     <img
@@ -414,7 +413,7 @@ Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), t
       :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
       :enter="final"
       class="absolute inset-0"
-      src="https://sli.dev/logo-triangle.png"
+      src="/logo-triangle.png"
       alt=""
     />
   </div>
@@ -568,7 +567,7 @@ Double-click on the draggable elements to edit their positions.
 ###### Directive Usage
 
 ```md
-<img v-drag="'square'" src="https://sli.dev/logo.png">
+<img v-drag="'square'" src="/logo.png">
 ```
 
 <br>
@@ -588,7 +587,7 @@ Double-click on the draggable elements to edit their positions.
   </div>
 </v-drag>
 
-<img v-drag="'square'" src="https://sli.dev/logo.png">
+<img v-drag="'square'" src="/logo.png">
 
 ###### Draggable Arrow
 
