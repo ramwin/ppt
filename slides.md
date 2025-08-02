@@ -461,6 +461,8 @@ LaTeX is supported out-of-box. Powered by [KaTeX](https://katex.org/).
 
 <div h-3 />
 
+最简单的除法 $\frac{3}{4}$
+
 Inline $\sqrt{3x-1}+(1+x)^2$
 
 Block
