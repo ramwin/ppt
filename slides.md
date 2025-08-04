@@ -50,6 +50,26 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
+
+## 文字格式  
+
+*斜体*
+
+`const a = 3`
+
+**强调**
+
+The **default** slot
+
+我这个文字需要居中{text-align=center}  
+
+> 引用  
+
+<div style="font-size: xx-small;">
+我是很小的文字
+</div>
+
+---
 transition: fade-out
 ---
 
