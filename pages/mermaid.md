@@ -15,6 +15,8 @@ graph TD
 B[Text] --> C{Decision}
 C -->|One| D[Result 1]
 C -->|Two| E[Result 2]
+E -->F@{shape: diamond, label: "决定"}
+style F font-size:1.9rem,fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5,padding:100px
 ```
 
 ```mermaid
