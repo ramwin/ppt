@@ -70,6 +70,10 @@ The **default** slot
 </div>
 
 ---
+src: ./pages/图形.md
+---
+
+---
 transition: fade-out
 ---
 
@@ -479,6 +483,10 @@ src: ./pages/latex.md
 
 ---
 src: ./pages/mermaid.md
+---
+
+---
+src: ./pages/grid.md
 ---
 
 ---
