@@ -66,5 +66,6 @@ const option = ref({
 <style scoped>
 .chart {
   height: 400px;
+  width: 600px;  /* 必须指定width, 不然有时候因为组件载入速度导致宽度不对 */
 }
 </style>
