@@ -74,6 +74,10 @@ src: ./pages/图形.md
 ---
 
 ---
+src: ./pages/echarts.md
+---
+
+---
 transition: fade-out
 ---
 
