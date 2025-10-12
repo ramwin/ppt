@@ -11,6 +11,8 @@
     "@slidev/cli": "^52.2.5",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
+    "@types/node": "^24.7.2",
+    "csv-parse": "^6.1.0",
     "echarts": "^6.0.0",
     "echarts-stat": "^1.2.0",
     "less": "^4.4.2",
