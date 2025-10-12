@@ -49,7 +49,9 @@ type EChartsOption = echarts.ComposeOption<
 
 import ecStat from 'echarts-stat';
 echarts.registerTransform(ecStat.transform.regression);
-import { ref, provide } from "vue";
+import { ref, provide, onMounted } from "vue";
+import Papa from 'papaparse'
+import lodash from "lodash"
 
 const option = ref({
   dataset: [
@@ -64,15 +66,6 @@ const option = ref({
         [7, 11962.5],
         [8, 14928.3],
         [9, 16909.2],
-        [10, 18547.9],
-        [11, 21617.8],
-        [12, 26638.1],
-        [13, 34634.4],
-        [14, 46759.4],
-        [15, 58478.1],
-        [16, 67884.6],
-        [17, 74462.6],
-        [18, 79395.7]
       ]
     },
     {
@@ -138,6 +131,24 @@ const option = ref({
     }
   ]
 });
+
+onMounted(async () => {
+  const response = await fetch("/gdp2.csv")
+  const text = await response.text()
+  console.log("获取到了csv内容", text)
+  Papa.parse(text, {
+      complete: (result) => {
+        console.log("解析后的结果", result)
+        const source = lodash.map(result.data, (item) => [item.year, item.gdp])
+        console.log("格式化:", source)
+        option.value.dataset[0].source = source
+        // for (let i of source) {
+        //   option.value.dataset[0].source.push(i)
+        // }
+      },
+      header: true,
+  })
+})
 
 </script>
 
