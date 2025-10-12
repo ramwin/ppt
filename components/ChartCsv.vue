@@ -92,7 +92,10 @@ const option = ref({
     text: '1981 - 1998 gross domestic product GDP (trillion yuan)',
     subtext: 'By ecStat.regression',
     sublink: 'https://github.com/ecomfe/echarts-stat',
-    left: 'center'
+    left: 'center',
+    textStyle: {
+      fontSize: 14,
+    },
   },
   tooltip: {
     trigger: 'axis',
@@ -101,6 +104,7 @@ const option = ref({
     }
   },
   xAxis: {
+    name: "年份(始于1981)",
     splitLine: {
       lineStyle: {
         type: 'dashed'
