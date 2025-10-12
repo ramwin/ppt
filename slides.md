@@ -78,6 +78,10 @@ src: ./pages/echarts.md
 ---
 
 ---
+src: ./pages/echarts_csv.md
+---
+
+---
 transition: fade-out
 ---
 
