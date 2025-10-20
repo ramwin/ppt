@@ -1,6 +1,13 @@
 strong {
   color: red;
 }
+html {
+  font-size: 24px;
+}
+.slidev-layout {
+  padding: 1.8rem;
+}
+h1,
 h2,
 h3,
 h4 {

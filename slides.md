@@ -6,6 +6,7 @@ theme: seriph
 background: https://cover.sli.dev
 # some information about your slides (markdown enabled)
 title: Welcome to Slidev
+canvasWidth: 1920
 info: |
   ## Slidev Starter Template
   Presentation slides for developers.
@@ -68,6 +69,12 @@ The **default** slot
 <div style="font-size: xx-small;">
 我是很小的文字
 </div>
+
+---
+
+## 图片
+
+![](/logo.png){width=200}
 
 ---
 src: ./pages/图形.md
