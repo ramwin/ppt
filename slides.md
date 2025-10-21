@@ -89,7 +89,7 @@ layout: two-cols-header
 
 ## 层次结构
 
-2G颗粒 = 8 Bank Group * 256M = 32 Bank * 64M = 32 Bank * 65535行 * 8KiB(8192列)
+2G颗粒 = 8 Bank Group * 256M = 32 Bank * 64M = 32 Bank * 65535行 * 8KiB(8192列)(实际上一个bank会由8个array构成,他们同时读写同一行的同一列)
 
 ::left::
 ![](/颗粒拆分.png){width=60%}
@@ -303,15 +303,48 @@ layout: two-cols-header
 
 比如虚拟地址32bit, 其中12bit当作offset维持不变, 剩下的20bit映射到18bit的物理内存地址.
 
-pagetable的entry数: 1M, 每个entry: 18bit. 一共占用18M内存
+![](/pagetable.png){width=130%}
 
 ---
 
-## TLB
+## page faults
+
+当程序访问的内存不再内存里时,抛出page faults, 由DMA把磁盘内的数据搬移到内存, 同时CPU处理其他进程(15~50us)  
+
+![](/pagefaults.png){width=90%}
 
 ---
 
 ## 多级Page Table
+
+物理地址32bit, 其中12bit(4K页表)当作offset维持不变, 剩下的20bit需要保存到entry  
+pagetable的entry数: 1M(2\*\*20), 每个entry: 如果是4字节(地址加标志位),就需要4M  
+如果服务器有500个进程,就需要2G内存空间.  
+
+<div grid="~ cols-3 gap-4">
+
+<div col-span-2>
+
+![](/二级页表.png){width=100%}
+
+</div>
+
+<div>
+
+我们把32bit分成10bit(一级页表索引) + 10bit(二级页表索引) + 12bit(offset)  
+
+这样一个程序最开始只需要载入一级页表就可以正常运行. 
+
+当访问地址时, 根据前10bit查找知道二级页表的内存地址. 再根据后20bit查找到内存页表的位置
+
+除了一级页表, 其他的次级页表都允许被swap出去, 这样一个程序就能只占用4K内存了
+
+> linux下一般用5级页表
+
+</div>
+
+</div>
+
 ---
 
 ## 参考资料
@@ -319,5 +352,8 @@ pagetable的entry数: 1M, 每个entry: 18bit. 一共占用18M内存
 * DRAM和SRAM的区别: https://www.youtube.com/watch?v=5xej9bNg5nE
 * 内存物理原理: https://www.youtube.com/watch?v=7J7X7aZvMXQ
 * 虚拟内存概念: https://www.youtube.com/watch?v=A9WLYbE0p-I
+* 一个bank对应多个array: https://www.youtube.com/watch?v=Mhqi70OPW0o
+* 多级页表: https://www.youtube.com/watch?v=Z4kSOv49GNc
+* 高性能计算机架构: https://www.youtube.com/watch?v=mMHkIa6Lkek
 
 ---
