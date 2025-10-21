@@ -13,3 +13,6 @@ h3,
 h4 {
   color: var(--slidev-theme-primary);
 }
+.center {
+  text: center;
+}
