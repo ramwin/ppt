@@ -47,9 +47,9 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 <div grid="~ cols-2">
 
-![](/内存位置.png){width=100%}  
+![](/logo.png){width=100%}  
 
-![](/8个颗粒.png){width=100%}
+![](/logo.png){width=100%}
 
 </div>
 ---
@@ -59,9 +59,9 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 <div grid="~ cols-2 gap-4">
 
-![](/slot_group.png)
+![](/logo.png)
 
-![](/channels.png)
+![](/logo.png)
 
 </div>
 
@@ -92,18 +92,18 @@ layout: two-cols-header
 2G颗粒 = 8 Bank Group * 256M = 32 Bank * 64M = 32 Bank * 65535行 * 8KiB(8192列)(实际上一个bank会由8个array构成,他们同时读写同一行的同一列)
 
 ::left::
-![](/颗粒拆分.png){width=60%}
+![](/logo.png){width=60%}
 
 外部封装-DRAM-互联矩阵x2-球栅阵列
 
-![](/8bank_group.png){width=60%}
+![](/logo.png){width=60%}
 
 ::right::
 
 
-<img src="/32bank.png" style="width: 60%"/>
+<img src="/logo.png" style="width: 60%"/>
 
-![](/bank尺寸.png){width=60%}
+![](/logo.png){width=60%}
 
 <p>
 2**16行, 2**11
@@ -113,13 +113,13 @@ layout: two-cols-header
 layout: center
 ---
 
-![](./public/逻辑图.png){width=90%}
+![](/logo.png){width=90%}
 
 ---
 
 ## DRAM 和 SRAM
 
-![](/SRAM和DRAM.png)
+![](/logo.png)
 
 ||SRAM|DRAM|
 |---|----|----|
@@ -135,7 +135,7 @@ layout: center
 
 <div grid="~ cols-2">
 
-![](/锁存器.png)
+![](/logo.png)
 
 * 当保持位为0时,不管输入什么,输出都不变
 * 当保持位位1时,输出变为输入后不再改变
@@ -144,9 +144,9 @@ layout: center
 
 <div grid="~ cols-2">
 
-![](/RS触发器0.png)
+![](/logo.png)
 
-![](/RS触发器1.png)
+![](/logo.png)
 
 </div>
 
@@ -159,14 +159,14 @@ layout: two-cols-header
 
 ::left::
 
-![](/DRAM.png)
+![](/logo.png)
 
 ::right::
 
 * MOS管控制是否激活
 * 电容保存数据(高电压为1)
 
-![](/写1.png)
+![](/logo.png)
 
 ---
 layout: two-cols-header
@@ -175,13 +175,13 @@ layout: two-cols-header
 ## 双层电路设计
 
 ::left::
-![](./public/电荷感应.png)
+![](/logo.png)
 
 
 ::right::
-![](./public/Snipaste_2025-10-20_16-32-46.png)
+![](/logo.png)
 
-![](./public/双层线路.png)
+![](/logo.png)
 
 
 ---
@@ -195,7 +195,7 @@ layout: two-cols-header
 
 <div>
 
-![](./public/电容放电.png){width=90%}
+![](/logo.png){width=90%}
 
 1. 如果是读,就把感应放大器充电到0.5V,  
 让感应放大器根据电容的相应变成1或者0
@@ -206,7 +206,7 @@ layout: two-cols-header
 
 <div>
 
-![](./public/感应放大器重写回.png){width=80%}
+![](/logo.png){width=80%}
 
 3. 感应放大器读取后反向给电容充电
 4. 如果是写, 直接把感应放大器和数据相连,  
@@ -228,14 +228,14 @@ layout: two-cols-header
 
 
 
-![](./public/行列地址.png){width=90%}
+![](/logo.png){width=90%}
 
-![](./public/激活行.png)
+![](/logo.png)
 
 
 ::right::
 
-![](./public/内存逻辑图.png)
+![](/logo.png)
 
 1. 第一次传输 bankgroup\[0:3\], bank\[4:5\], row\[6:21\]
 2. 激活行, 把感应放大器充电到0.5V
@@ -248,7 +248,7 @@ layout: two-cols-header
 
 ## 行和列的选择
 
-![](./public/选择.png)
+![](/logo.png)
 
 ---
 layout: two-cols-header
@@ -257,13 +257,13 @@ layout: two-cols-header
 ## 行和列选择的逻辑图
 
 ::left::
-![](./public/row.png)
+![](/logo.png)
 
 上图: 行选择器, 根据行地址, 激活对应的行  
 右图: 列选择器, 根据列地址输出对应的比特  
 
 ::right::
-![](./public/column.png)
+![](/logo.png)
 
 ---
 
@@ -272,7 +272,7 @@ layout: two-cols-header
 
 如果是连续地址的访问, 就可以避免重复激活行, 节约感应放大器充电和行地址发送时间
 
-![](./row-hit.png){width=93%}
+![](/logo.png){width=93%}
 
 ---
 layout: two-cols-header
@@ -286,14 +286,13 @@ layout: two-cols-header
 
 * 直接使用物理地址, 导致地址无法复用
 
-![](./public/useless.png){width=80%}
+![](/logo.png)
 
 ::right::
 
 * 直接使用内存地址, 任何一个程序能直接修改其他程序的变量, 存在安全问题
 
-![](./public/踩内存.png){width=60%}
-
+![](/logo.png)
 
 ---
 
